@@ -1,2 +1,2 @@
 # greenhouse
-Raspberry Pi greenhouse 👽
+Raspberry Pi __Greenhouse__ 👽
