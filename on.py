@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
-led_panel = 16
-fan_cooler = 20
+led_panel = 20
+fan_cooler = 16
 status = 21
 
 GPIO.setwarnings(False)
@@ -16,7 +16,7 @@ GPIO.setup(status, GPIO.OUT)
 def on_everything():
     print("on led_panel")
     GPIO.output(led_panel, True)
-    print("on fan_cooler")
+    print("Off fan_cooler")
     GPIO.output(fan_cooler, False)
     print("on status")
     GPIO.output(status, True)
