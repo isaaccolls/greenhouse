@@ -14,11 +14,11 @@ GPIO.setup(status, GPIO.OUT)
 
 
 def off_everything():
-    print("on led_panel")
+    print("off led_panel")
     GPIO.output(led_panel, False)
-    print("on fan_cooler")
+    print("off fan_cooler")
     GPIO.output(fan_cooler, False)
-    print("on status")
+    print("off status")
     GPIO.output(status, False)
     time.sleep(1)
     print("bye")
