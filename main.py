@@ -54,17 +54,23 @@ def status_blink():
 def do_it():
     print("do_it")
     datetime_object = datetime.datetime.now()
+    actual_hr = datetime_object.hour
+    actual_min = datetime_object.minute
     print('datetime_object: {}'.format(datetime_object))
-    actual_hour = datetime_object.hour
-    print('actual_hour: {}'.format(actual_hour))
-    actual_minute = datetime_object.minute
-    print('actual_minute: {}'.format(actual_minute))
-    led_panel_on_hour = 7
-    led_panel_off_hour = 21
-    if actual_hour > led_panel_on_hour and actual_hour < led_panel_off_hour:
+    print('actual_hr: {}'.format(actual_hr))
+    print('actual_min: {}'.format(actual_min))
+    led_panel_on_hr = 7
+    led_panel_off_hr = 21
+    if actual_hr > led_panel_on_hr and actual_hr < led_panel_off_hr:
         led_panel_on()
     else:
         led_panel_off()
+    fan_cooler_on_min = 0
+    fan_cooler_off_min = 10
+    if actual_min > fan_cooler_on_min and actual_min < fan_cooler_off_min:
+        fan_cooler_on()
+    else:
+        fan_cooler_off()
 
 
 if __name__ == '__main__':
