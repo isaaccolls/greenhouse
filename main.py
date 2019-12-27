@@ -40,7 +40,7 @@ def fan_cooler_on():
 
 
 def fan_cooler_off():
-    print("Off fan_cooler")
+    print("fan_cooler_off")
     if prod_env:
         GPIO.output(fan_cooler, False)
         time.sleep(1)
