@@ -61,13 +61,13 @@ def do_it():
     print('actual_min: {}'.format(actual_min))
     led_panel_on_hr = 7
     led_panel_off_hr = 21
-    if actual_hr > led_panel_on_hr and actual_hr < led_panel_off_hr:
+    if actual_hr >= led_panel_on_hr and actual_hr < led_panel_off_hr:
         led_panel_on()
     else:
         led_panel_off()
     fan_cooler_on_min = 0
-    fan_cooler_off_min = 10
-    if actual_min > fan_cooler_on_min and actual_min < fan_cooler_off_min:
+    fan_cooler_off_min = 15
+    if actual_min >= fan_cooler_on_min and actual_min < fan_cooler_off_min:
         fan_cooler_on()
     else:
         fan_cooler_off()
