@@ -17,7 +17,7 @@ def on_everything():
     print("on led_panel")
     GPIO.output(led_panel, True)
     print("Off fan_cooler")
-    GPIO.output(fan_cooler, False)
+    GPIO.output(fan_cooler, True)
     print("on status")
     GPIO.output(status, True)
     time.sleep(1)
