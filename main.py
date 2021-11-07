@@ -59,18 +59,14 @@ def do_it():
     print('datetime_object: {}'.format(datetime_object))
     print('actual_hr: {}'.format(actual_hr))
     print('actual_min: {}'.format(actual_min))
-    led_panel_on_hr = 7
-    led_panel_off_hr = 21
+    led_panel_on_hr = 6
+    led_panel_off_hr = 23
+    # led_panel_on_hr = 7
+    # led_panel_off_hr = 20
     if actual_hr >= led_panel_on_hr and actual_hr < led_panel_off_hr:
         led_panel_on()
     else:
         led_panel_off()
-    fan_cooler_on_min = 0
-    fan_cooler_off_min = 15
-    if actual_min >= fan_cooler_on_min and actual_min < fan_cooler_off_min:
-        fan_cooler_on()
-    else:
-        fan_cooler_off()
 
 
 if __name__ == '__main__':
