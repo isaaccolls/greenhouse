@@ -6,8 +6,8 @@ try:
 except RuntimeError:
     prod_env = False
 
-led_panel = 20
-fan_cooler = 16
+led_panel = 14
+fan_cooler = 15
 status = 21
 
 if prod_env:

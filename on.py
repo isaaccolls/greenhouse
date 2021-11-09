@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
-led_panel = 20
-fan_cooler = 16
+led_panel = 14
+fan_cooler = 15
 status = 21
 
 GPIO.setwarnings(False)
