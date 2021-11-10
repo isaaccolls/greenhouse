@@ -14,5 +14,5 @@ boot_delay=3
 ## cron
 
 ```
-*/5 * * * * python3 /home/pi/greenhouse/main.py
+*/5 * * * * python3 /home/pi/projects/greenhouse/main.py
 ```
