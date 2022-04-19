@@ -1,18 +1,23 @@
+- [greenhouse](#greenhouse)
+  - [config](#config)
+
 # greenhouse
 
 Raspberry Pi **Greenhouse** 🍁
 
-## config edited
+## config
 
-in /boot/config.txt
+### boot
+
+in `/boot/config.txt`
 
 ```
 hdmi_force_hotplug=1
 boot_delay=3
 ```
 
-## cron
+### cron
 
 ```
-*/5 * * * * python3 /home/pi/projects/greenhouse/main.py
+*/1 * * * * python3 /home/pi/projects/greenhouse/main.py
 ```
