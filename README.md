@@ -20,4 +20,5 @@ boot_delay=3
 
 ```
 */1 * * * * python3 /home/pi/projects/greenhouse/main.py
+*/1 * * * * python3 /home/isaac/greenhouse/chicauma.py
 ```
