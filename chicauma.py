@@ -22,7 +22,7 @@ if prod_env:
 def relay_action(relay, action):
     print("relay: " + str(relay) + ", action: " + str(action))
     if prod_env:
-        GPIO.output(relay_grass, action)
+        GPIO.output(relay, action)
         time.sleep(1)
 
 
