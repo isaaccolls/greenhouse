@@ -3,7 +3,7 @@ import time
 
 led_panel = 14
 fan_cooler = 15
-status = 21
+status = 2
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
