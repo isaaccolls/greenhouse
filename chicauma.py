@@ -6,77 +6,71 @@ try:
 except RuntimeError:
     prod_env = False
 
+# relay pinout
 relay_grass = 14
 relay_pine = 15
-relay_lights = 2
+relay_light = 2
 
 if prod_env:
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(relay_grass, GPIO.OUT)
     GPIO.setup(relay_pine, GPIO.OUT)
-    GPIO.setup(relay_lights, GPIO.OUT)
+    GPIO.setup(relay_light, GPIO.OUT)
 
 
 def relay_action(relay, action):
-    print("relay: " + relay + ", action: " + action)
-    # time.sleep(1)
+    print("relay: " + str(relay) + ", action: " + str(action))
+    if prod_env:
+        GPIO.output(relay_grass, action)
+        time.sleep(1)
 
 
-# def relay_grass_on():
-#     print("relay_grass_on 👍️")
-#     if prod_env:
-#         GPIO.output(relay_grass, True)
-#         time.sleep(1)
+def check_grass(weekday, hour, minute):
+    print('-- check_grass')
+    if weekday == 0 or weekday == 3:
+        if hour == 1:
+            if minute >= 0 and minute <= 10:
+                relay_action(relay_grass, True)
+            else:
+                relay_action(relay_grass, False)
+        else:
+            relay_action(relay_grass, False)
+    else:
+        relay_action(relay_grass, False)
 
 
-# def relay_grass_off():
-#     print("relay_grass_off 👎️")
-#     if prod_env:
-#         GPIO.output(relay_grass, False)
-#         time.sleep(1)
+def check_pine(hour, minute):
+    print('-- check_pine')
+    if hour == 15:
+        if minute >= 0 and minute <= 5:
+            relay_action(relay_pine, True)
+        else:
+            relay_action(relay_pine, False)
+    else:
+        relay_action(relay_pine, False)
 
 
-# def fan_cooler_on():
-#     print("fan_cooler_on")
-#     if prod_env:
-#         GPIO.output(relay_pine, True)
-#         time.sleep(1)
-
-
-# def fan_cooler_off():
-#     print("fan_cooler_off")
-#     if prod_env:
-#         GPIO.output(relay_pine, False)
-#         time.sleep(1)
-
-
-# def status_blink():
-#     print("blink status")
-#     GPIO.output(status, True)
+def check_light(hour):
+    print('-- check_light')
+    if hour >= 18 or hour <= 6:
+        relay_action(relay_light, True)
+    else:
+        relay_action(relay_light, False)
 
 
 def do_it():
     print("do_it")
-    relay_action(relay_grass, True)
-    # datetime_object = datetime.datetime.now()
-    # actual_hr = datetime_object.hour
-    # actual_min = datetime_object.minute
-    # print('datetime_object: {}'.format(datetime_object))
-    # print('actual_hr: {}'.format(actual_hr))
-    # print('actual_min: {}'.format(actual_min))
-    # led_panel_on_hr = 6
-    # led_panel_off_hr = 23
-    # if actual_hr >= led_panel_on_hr and actual_hr < led_panel_off_hr:
-    #     led_panel_on()
-    # else:
-    #     led_panel_off()
-    # if (actual_min % 10 == 0):
-    #     fan_cooler_on()
-    # else:
-    #     fan_cooler_off()
+    datetime_object = datetime.datetime.now()
+    weekday = datetime_object.weekday()
+    hour = datetime_object.hour
+    minute = datetime_object.minute
+    print('weekday: {}, hour: {}, minute: {}'.format(weekday, hour, minute))
+    check_grass(weekday, hour, minute)
+    check_pine(hour, minute)
+    check_light(hour)
 
 
 if __name__ == '__main__':
     do_it()
-    print('this is the end')
+    print('🔥')
