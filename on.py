@@ -1,6 +1,10 @@
 import RPi.GPIO as GPIO
 import time
 
+# relay_grass = 14
+# relay_pine = 15
+# relay_light = 2
+
 led_panel = 14
 fan_cooler = 15
 status = 2
@@ -16,11 +20,6 @@ GPIO.setup(status, GPIO.OUT)
 def on_everything():
     print("on led_panel")
     GPIO.output(led_panel, True)
-    print("On fan_cooler")
-    GPIO.output(fan_cooler, True)
-    print("on status")
-    GPIO.output(status, True)
-    time.sleep(1)
 
 
 if __name__ == '__main__':
