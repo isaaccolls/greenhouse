@@ -28,14 +28,8 @@ def relay_action(relay, action):
 
 def check_grass(weekday, hour, minute):
     print('-- check_grass')
-    if weekday == 0 or weekday == 3:
-        if hour == 1:
-            if minute >= 0 and minute <= 10:
-                relay_action(relay_grass, True)
-            else:
-                relay_action(relay_grass, False)
-        else:
-            relay_action(relay_grass, False)
+    if (weekday == 0 or weekday == 4) and hour == 8 and (minute >= 30 and minute <= 40):
+        relay_action(relay_grass, True)
     else:
         relay_action(relay_grass, False)
 
@@ -50,7 +44,7 @@ def check_pine(hour, minute):
 
 def check_light(hour):
     print('-- check_light')
-    if hour >= 19 or hour <= 5:
+    if hour >= 18 or hour <= 7:
         relay_action(relay_light, True)
     else:
         relay_action(relay_light, False)
