@@ -53,6 +53,7 @@ def check_light(hour):
 def do_it():
     print("do_it")
     datetime_object = datetime.datetime.now()
+    print("datetime_object: {}".format(datetime_object))
     weekday = datetime_object.weekday()
     hour = datetime_object.hour
     minute = datetime_object.minute
