@@ -58,8 +58,8 @@ def do_it():
     hour = datetime_object.hour
     minute = datetime_object.minute
     print('weekday: {}, hour: {}, minute: {}'.format(weekday, hour, minute))
-    check_grass(weekday, hour, minute)
-    # check_pine(hour, minute)
+    # check_grass(weekday, hour, minute)
+    check_pine(hour, minute)
     check_light(hour)
 
 
