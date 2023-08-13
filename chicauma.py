@@ -36,7 +36,7 @@ def check_grass(weekday, hour, minute):
 
 def check_pine(weekday, hour, minute):
     print('-- check_pine')
-    if (weekday == 0 or weekday == 3 or weekday == 5 or weekday == 6) and hour == 16 and (minute >= 0 and minute <= 35):
+    if (weekday == 0 or weekday == 3 or weekday == 5) and hour == 7 and (minute >= 10 and minute <= 15):
         relay_action(relay_pine, True)
     else:
         relay_action(relay_pine, False)
