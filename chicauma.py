@@ -44,7 +44,7 @@ def check_pine(weekday, hour, minute):
 
 def check_light(hour):
     print('-- check_light')
-    if hour >= 19 or hour <= 6:
+    if hour >= 20 or hour <= 6:
         relay_action(relay_light, True)
     else:
         relay_action(relay_light, False)
