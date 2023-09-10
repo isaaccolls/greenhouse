@@ -19,7 +19,7 @@ GPIO.setup(status, GPIO.OUT)
 
 def on_everything():
     print("on led_panel")
-    GPIO.output(led_panel, True)
+    GPIO.output(fan_cooler, True)
 
 
 if __name__ == '__main__':
