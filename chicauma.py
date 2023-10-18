@@ -36,7 +36,10 @@ def check_grass(weekday, hour, minute):
 
 def check_pine(weekday, hour, minute):
     print('-- check_pine')
-    if (weekday == 0 or weekday == 2 or weekday == 4 or weekday == 6) and hour == 7 and (minute >= 20 and minute <= 30):
+    # winter time 👇
+    # if (weekday == 0 or weekday == 2 or weekday == 4 or weekday == 6) and hour == 7 and (minute >= 20 and minute <= 30):
+    # spring time 👇
+    if hour == 9 and (minute >= 0 and minute <= 10):
         relay_action(relay_pine, True)
     else:
         relay_action(relay_pine, False)
@@ -44,7 +47,7 @@ def check_pine(weekday, hour, minute):
 
 def check_light(hour):
     print('-- check_light')
-    if hour >= 20 or hour <= 6:
+    if hour >= 20 or hour <= 5:
         relay_action(relay_light, True)
     else:
         relay_action(relay_light, False)
