@@ -39,7 +39,7 @@ def check_pine(weekday, hour, minute):
     # winter time 👇
     # if (weekday == 0 or weekday == 2 or weekday == 4 or weekday == 6) and hour == 7 and (minute >= 20 and minute <= 30):
     # spring time 👇
-    if hour == 9 and (minute >= 0 and minute <= 10):
+    if hour == 9 and (minute >= 0 and minute <= 15):
         relay_action(relay_pine, True)
     else:
         relay_action(relay_pine, False)
