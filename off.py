@@ -17,9 +17,9 @@ GPIO.setup(relay_light, GPIO.OUT)
 
 def off_everything():
     print("off_everything")
-    GPIO.output(relay_grass, False)
-    GPIO.output(relay_pine, False)
-    GPIO.output(relay_light, False)
+    GPIO.output(relay_grass, True)
+    # GPIO.output(relay_pine, True)
+    # GPIO.output(relay_light, True)
 
 
 if __name__ == '__main__':
