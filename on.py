@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 import time
 
 # relay pinout
-relay_grass = 14
-relay_pine = 15
+relay_grass = 15
+relay_pine = 14
 relay_light = 2
 
 GPIO.setwarnings(False)

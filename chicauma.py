@@ -7,8 +7,8 @@ except RuntimeError:
     prod_env = False
 
 # relay pinout
-relay_grass = 14
-relay_pine = 15
+relay_grass = 15
+relay_pine = 14
 relay_light = 2
 
 if prod_env:
