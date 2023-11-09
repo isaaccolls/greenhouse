@@ -28,29 +28,26 @@ def relay_action(relay, action):
 
 def check_grass(weekday, hour, minute):
     print('-- check_grass')
-    if hour == 14 and (minute >= 0 and minute <= 5):
-        relay_action(relay_grass, True)
-    else:
+    if hour == 9 and (minute >= 0 and minute <= 15):
         relay_action(relay_grass, False)
+    else:
+        relay_action(relay_grass, True)
 
 
 def check_pine(weekday, hour, minute):
     print('-- check_pine')
-    # winter time 👇
-    # if (weekday == 0 or weekday == 2 or weekday == 4 or weekday == 6) and hour == 7 and (minute >= 20 and minute <= 30):
-    # spring time 👇
-    if hour == 9 and (minute >= 0 and minute <= 15):
-        relay_action(relay_pine, True)
-    else:
+    if (weekday == 0 or weekday == 2 or weekday == 4) and hour == 6 and (minute >= 0 and minute <= 25):
         relay_action(relay_pine, False)
+    else:
+        relay_action(relay_pine, True)
 
 
 def check_light(hour):
     print('-- check_light')
     if hour >= 21 or hour <= 5:
-        relay_action(relay_light, True)
-    else:
         relay_action(relay_light, False)
+    else:
+        relay_action(relay_light, True)
 
 
 def do_it():
@@ -61,8 +58,7 @@ def do_it():
     hour = datetime_object.hour
     minute = datetime_object.minute
     print('weekday: {}, hour: {}, minute: {}'.format(weekday, hour, minute))
-    # check_grass(weekday, hour, minute)
-    # comment/uncomment this one 👇️
+    check_grass(weekday, hour, minute)
     check_pine(weekday, hour, minute)
     check_light(hour)
 
