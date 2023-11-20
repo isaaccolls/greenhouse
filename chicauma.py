@@ -28,7 +28,7 @@ def relay_action(relay, action):
 
 def check_grass(weekday, hour, minute):
     print('-- check_grass')
-    if (hour == 9 or hour == 22) and (minute >= 0 and minute <= 10):
+    if (hour == 10 or hour == 22) and (minute >= 0 and minute <= 10):
         relay_action(relay_grass, False)
     else:
         relay_action(relay_grass, True)
