@@ -44,7 +44,7 @@ def check_pine(weekday, hour, minute):
 
 def check_light(hour):
     print('-- check_light')
-    if hour >= 18 or hour <= 5:
+    if hour >= 6 or hour <= 23:
         relay_action(relay_light, False)
     else:
         relay_action(relay_light, True)
@@ -58,8 +58,8 @@ def do_it():
     hour = datetime_object.hour
     minute = datetime_object.minute
     print('weekday: {}, hour: {}, minute: {}'.format(weekday, hour, minute))
-    check_grass(weekday, hour, minute)
-    check_pine(weekday, hour, minute)
+    # check_grass(weekday, hour, minute)
+    # check_pine(weekday, hour, minute)
     check_light(hour)
 
 
