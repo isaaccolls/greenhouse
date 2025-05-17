@@ -46,8 +46,10 @@ def check_light(hour):
     print('-- check_light')
     if hour >= 6 and hour <= 22:
         relay_action(relay_light, False)
+        print("light on")
     else:
         relay_action(relay_light, True)
+        print("light off")
 
 
 def do_it():
